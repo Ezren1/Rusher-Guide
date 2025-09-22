@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Rusher's Guide - Ultimate Hinglish Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glow-blue: #00bfff;
+            --glow-pink: #ff00ff;
+            --glow-red: #ff1f4b;
+            --bg-dark: #0A0A14;
+            --bg-card: #10101E;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #EAEAEA;
+            overflow-x: hidden;
+        }
+        
+        body::-webkit-scrollbar { width: 8px; }
+        body::-webkit-scrollbar-track { background: var(--bg-dark); }
+        body::-webkit-scrollbar-thumb { background-color: var(--glow-blue); border-radius: 10px; border: 2px solid var(--bg-dark); }
+
+        .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+
+        .glow-text-blue { text-shadow: 0 0 8px var(--glow-blue), 0 0 16px rgba(0, 191, 255, 0.5); }
+        .glow-text-pink { text-shadow: 0 0 8px var(--glow-pink), 0 0 16px rgba(255, 0, 255, 0.5); }
+
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(10, 10, 20, 0) 60%, var(--bg-dark) 100%),
+                              radial-gradient(ellipse 80% 80% at 50% -20%, rgba(0, 191, 255, 0.2), transparent);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-heading { letter-spacing: 2px; font-size: clamp(2.5rem, 6vw, 5rem); }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); border-color: var(--glow-blue); }
+
+        .video-placeholder {
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            display: flex; justify-content: center; align-items: center; cursor: pointer; position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-placeholder:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        .video-placeholder .play-button { width: 64px; height: 64px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; }
+        .video-placeholder:hover .play-button { transform: scale(1.1); }
+
+        .nav { background: rgba(16, 16, 30, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .stagger-1 { transition-delay: 100ms; } .stagger-2 { transition-delay: 200ms; } .stagger-3 { transition-delay: 300ms; }
+        
+        .tab-btn { background-color: transparent; border: 1px solid var(--border-color); color: #a0a0a0; padding: 0.5rem 1rem; border-radius: 999px; transition: all 0.3s ease; font-weight: 500;}
+        .tab-btn.active { background-color: var(--glow-blue); color: var(--bg-dark); border-color: var(--glow-blue); font-weight: 700; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Nav -->
+    <header id="header" class="nav sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="font-bebas text-2xl tracking-widest"><span class="text-[var(--glow-blue)]">RUSHER'S</span><span class="text-white">GUIDE</span></h1>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 font-semibold text-sm">
+                <a href="#intro" class="hover:text-[var(--glow-blue)] transition-colors">Aapka Role</a>
+                <a href="#tactics" class="hover:text-[var(--glow-blue)] transition-colors">Core Tactics</a>
+                <a href="#advanced" class="hover:text-[var(--glow-blue)] transition-colors">Advanced Concepts</a>
+                <a href="#decision" class="hover:text-[var(--glow-blue)] transition-colors">Decision Making</a>
+                <a href="#mindset" class="hover:text-[var(--glow-blue)] transition-colors">Mindset</a>
+                <a href="#training" class="hover:text-[var(--glow-blue)] transition-colors">Training Drills</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg h-screen flex items-center justify-center text-center -mt-[80px] pt-[80px]">
+            <div class="container mx-auto px-6">
+                <h1 class="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-wider glow-text-blue reveal">PRIMARY RUSHER</h1>
+                <p class="font-bebas text-3xl md:text-4xl lg:text-5xl text-white tracking-widest mt-2 reveal stagger-1">The Ultimate Hinglish Guide</p>
+                <p class="max-w-3xl mx-auto mt-6 text-gray-300 reveal stagger-2">Yeh video ki demand itni thi, aur ab woh din aa chuka hai. Hum sirf tips nahi, balki international rushers jaise <span class="font-bold text-[var(--glow-pink)]">Wasanaa</span> ki har micro-level cheez, har mistake, aur har pro-move ko decode karenge.</p>
+                <a href="#intro" class="inline-block bg-[var(--glow-blue)] text-black font-bold py-3 px-8 rounded-full mt-8 hover:bg-white transition-all transform hover:scale-105 reveal stagger-3">
+                    Chalo, Shuruat Karte Hain
+                </a>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-20 md:py-32">
+            <!-- Introduction Section -->
+            <section id="intro" class="mb-20 md:mb-32">
+                <h2 class="font-bebas section-heading text-center reveal">RUSHER <span class="text-[var(--glow-blue)]">KA ASLI ROLE</span></h2>
+                <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">Primary Rusher ka kaam sirf 'ghus ke marna' nahi hai. Aap team ke playmaker, momentum-setter aur sabse important, fight ke director ho. Apne role ko a-to-z samjho.</p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="card p-8 reveal stagger-1">
+                        <h3 class="font-bebas text-3xl text-[var(--glow-blue)] tracking-wider">Breach & Create Chaos</h3>
+                        <p class="mt-2 text-gray-300">Aapka kaam hai enemy ke set-up (jaise Gloo Wall ka cover) ko todna aur unke formation mein aisi khalbali machana ki woh apni position se hil jaayein. Aapke chaos se hi team ke liye opening banti hai.</p>
+                    </div>
+                    <div class="card p-8 reveal stagger-2">
+                        <h3 class="font-bebas text-3xl text-[var(--glow-blue)] tracking-wider">Live Intel & Playmaking</h3>
+                        <p class="mt-2 text-gray-300">Jab aap push karte ho, toh team ko live information milti hai—enemy kahan hai, kitna damage hai, kaun solo hai. Yeh intel aapke IGL aur support players ko agla move decide karne mein help karti hai.</p>
+                    </div>
+                    <div class="card p-8 reveal stagger-3">
+                        <h3 class="font-bebas text-3xl text-[var(--glow-blue)] tracking-wider">Dictate The Engagement</h3>
+                        <p class="mt-2 text-gray-300">Ek pro rusher fight ko apne hisaab se chalata hai. Dushman ko react karne par majboor karo, unhe apni strategy banane ka mauka hi mat do. Aap proactive ho, woh reactive. Yahi jeet ka formula hai.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Core Tactics Section -->
+            <section id="tactics" class="mb-20 md:mb-32">
+                <h2 class="font-bebas section-heading text-center reveal">CORE <span class="text-[var(--glow-pink)]">TACTICS</span></h2>
+                <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">Yeh woh fundamental skills hain jo har elite rusher ke DNA mein hoti hain. Inhe master kiye bina aage badhna namumkin hai.</p>
+
+                <!-- Tactic 1: Sniper Covers -->
+                <div class="card p-8 md:p-12 mt-16 reveal">
+                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div>
+                            <span class="font-bebas text-xl text-[var(--glow-blue)]">CORE TACTIC 01</span>
+                            <h3 class="font-bebas text-5xl mt-1">Sniper Cover Ko Respect Do</h3>
+                            <p class="mt-4 text-gray-300">Sabse badi galti jo 90% rushers karte hain: ek knock milte hi kill ki laalach mein open mein bhaag jaate hain. Woh yeh bhool jaate hain ki dushman ka sniper unpar hi aim karke baitha hai. Pro players jaante hain, <span class="text-white font-semibold">kill se zyaada important fight jeetna hai.</span></p>
+                            <div class="mt-6 border-l-4 border-[var(--glow-blue)] pl-4">
+                                <h4 class="font-bold text-lg text-white">Wasanaa ka Example:</h4>
+                                <p class="text-sm text-gray-400 mt-1">BRU vs GOW fight mein, Wasanaa ne knock nikalne ke baad over-extend karke finish karne ki koshish nahi ki. Usne Tatsuya ko <span class="font-bold text-yellow-300">peeche ki taraf</span> use karke khud ko safe kiya. Usne fight control ki, over-extend nahi kiya.</p>
+                            </div>
+                        </div>
+                        <div class="video-placeholder" onclick="window.open('https://youtu.be/7C06BkqJQN0?si=4QN677Osiom5_W2d', '_blank')">
+                            <div class="play-button"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg></div>
+                            <p class="absolute bottom-4 left-4 text-sm font-semibold">Concept: Controlled Aggression</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tactic 2: Movement Speed -->
+                <div class="card p-8 md:p-12 mt-16 reveal">
+                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div class="md:order-2">
+                            <span class="font-bebas text-xl text-[var(--glow-pink)]">CORE TACTIC 02</span>
+                            <h3 class="font-bebas text-5xl mt-1">Movement Speed Ko Stack Karo</h3>
+                            <p class="mt-4 text-gray-300">Aapki speed hi aapki life hai. International players hamesha movement speed ko maximum rakhte hain. Yeh sirf Tatsuya use karne se nahi hota, iske peeche ek poora system hai.</p>
+                            <div class="mt-6 border-l-4 border-[var(--glow-pink)] pl-4">
+                                <h4 class="font-bold text-lg text-white">The Holy Trinity of Speed:</h4>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-sm text-gray-300">
+                                    <li><span class="font-bold text-white">Joseph On Karwana:</span> Looting ke time pehle hi thoda damage lelo taaki Joseph active ho jaaye.</li>
+                                    <li><span class="font-bold text-white">Maximum Energizers:</span> Pocket market ho ya loot, hamesha extra Energizers uthao. Yeh aapko continuous HP aur speed dono denge.</li>
+                                    <li><span class="font-bold text-white">Tatsuya Dash:</span> Isko hamesha speed stack ke upar use karo for maximum effect.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="video-placeholder md:order-1" onclick="window.open('https://youtu.be/7C06BkqJQN0?si=4QN677Osiom5_W2d', '_blank')">
+                             <div class="play-button"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg></div>
+                            <p class="absolute bottom-4 left-4 text-sm font-semibold">Concept: Stacking Buffs</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Advanced Concepts Section -->
+            <section id="advanced" class="mb-20 md:mb-32">
+                <h2 class="font-bebas section-heading text-center reveal">ADVANCED <span class="text-[var(--glow-blue)]">CONCEPTS</span></h2>
+                <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">Jab aap core tactics master kar lete ho, tab aap in high-level strategies ko use karke game ko poori tarah control kar sakte ho.</p>
+
+                <!-- Concept 1: Tatsuya + Oskar Combo -->
+                <div class="card p-8 md:p-12 mt-16 reveal">
+                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div class="md:order-2">
+                            <span class="font-bebas text-xl text-[var(--glow-blue)]">ADVANCED CONCEPT 01</span>
+                            <h3 class="font-bebas text-4xl lg:text-5xl mt-1">Tatsuya + Oskar "Simultaneously"</h3>
+                            <p class="mt-4 text-gray-300">Yeh combo mind-blow kar dega. Ise 'simultaneously' yaani ek saath use karne ka matlab hai 'The 0.5 Second Window'—aadhe second mein entry, cover destroy, aur reposition. Enemy ko react karne ka time hi nahi milta.</p>
+                             <div id="combo-tabs" class="mt-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <button class="tab-btn active" data-tab="execution">Pro Execution</button>
+                                    <button class="tab-btn" data-tab="variations">Variations</button>
+                                </div>
+                                <div class="tab-content active" id="execution">
+                                    <h4 class="font-bold text-lg text-white">Perfect Sequence (Wasanaa Style):</h4>
+                                    <ol class="list-decimal list-inside mt-2 space-y-1 text-sm text-gray-300">
+                                        <li><span class="font-semibold text-white">Pehla Tatsuya Use Hua:</span> Speed se close-in karne ke liye.</li>
+                                        <li><span class="font-semibold text-white">Close Aake Oskar Use Hua:</span> Jaise hi aap enemy ke wall ke paas aate ho, turant Oskar. Wall toota.</li>
+                                        <li><span class="font-semibold text-white">Immediate Action:</span> Wall toot-te hi aapke paas clear shot hota hai. Damage do ya knock nikalo.</li>
+                                        <li><span class="font-semibold text-white">Dusra Tatsuya (Optional):</span> Fight jeetne ke baad ya damage deke safe hone ke liye back off karo.</li>
+                                    </ol>
+                                </div>
+                                <div class="tab-content" id="variations">
+                                     <h4 class="font-bold text-lg text-white">Strategic Variations:</h4>
+                                     <ul class="list-disc list-inside mt-2 space-y-1 text-sm text-gray-300">
+                                        <li><b>Defensive Breach:</b> Pehle Oskar se wall todo, fir Tatsuya se damage deke waapis apne cover mein aa jao.</li>
+                                        <li><b>Reposition Breach:</b> Pehle Tatsuya se side mein jao, ek naya angle banao, fir Oskar se wall tod ke surprise attack do.</li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-placeholder md:order-1" onclick="window.open('https://youtu.be/7C06BkqJQN0?si=4QN677Osiom5_W2d', '_blank')">
+                             <div class="play-button"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg></div>
+                            <p class="absolute bottom-4 left-4 text-sm font-semibold">Concept: Instant Breach & Entry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concept 2: Bait Rush -->
+                <div class="card p-8 md:p-12 mt-16 reveal">
+                     <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div>
+                            <span class="font-bebas text-xl text-[var(--glow-blue)]">ADVANCED CONCEPT 02</span>
+                            <h3 class="font-bebas text-4xl lg:text-5xl mt-1">The Art of Bait Rush</h3>
+                            <p class="mt-4 text-gray-300">Yeh ek high IQ team play hai. Aap opponent ko dikhate ho ki aap charge kar rahe ho, unka attention aur skills apni taraf kheench lete ho, aur tabhi aapka teammate flank karke unhe backstab kar deta hai.</p>
+                             <div class="mt-6 border-l-4 border-[var(--glow-blue)] pl-4">
+                                <h4 class="font-bold text-lg text-white">Success Ke Ingredients:</h4>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-sm text-gray-300">
+                                    <li><b>Role Clarity:</b> Aapka kaam knock nikalna nahi, <span class="font-bold text-yellow-300">attention-grabbing</span> hai. Zinda rehna hai.</li>
+                                    <li><b>Tool ka Sahi Istemal:</b> Chrono ya Tatsuya use karke bait karo, thoda chip damage do, aur enemy ko busy rakho.</li>
+                                    <li><b>Perfect Timing:</b> Jaise hi 2-3 enemies aap par focus karein, aapke flanker (jaise Kero) ko attack karna hai. Communication is key.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="video-placeholder" onclick="window.open('https://youtu.be/7C06BkqJQN0?si=4QN677Osiom5_W2d', '_blank')">
+                            <div class="play-button"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg></div>
+                            <p class="absolute bottom-4 left-4 text-sm font-semibold">Concept: Team-Based Deception</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mid-Fight Decision Making -->
+            <section id="decision" class="mb-20 md:mb-32">
+                 <h2 class="font-bebas section-heading text-center reveal">MID-FIGHT <span class="text-[var(--glow-pink)]">DECISION MAKING</span></h2>
+                 <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">Entry lene ke baad kya karna hai, yahi cheez ek average aur ek pro rusher mein farak paida karti hai. Apne agle move ko hamesha plan karo.</p>
+                 <div class="card p-8 md:p-12 mt-12 reveal stagger-2">
+                     <h3 class="font-bebas text-4xl text-center tracking-wider text-white">The Rusher's Decision Tree</h3>
+                     <p class="text-center text-gray-400 mt-2">Situation ke hisaab se apna agla move chuno.</p>
+                     <div class="grid md:grid-cols-2 gap-8 mt-8">
+                         <div class="border-l-4 border-green-500 p-4 rounded">
+                            <h4 class="font-bold text-xl text-green-400">Situation A: Entry Successful (Aapne Knock Nikala)</h4>
+                            <p class="font-semibold mt-4">Agar aapki HP full hai & teammate paas hai:</p>
+                            <p class="text-gray-300">Turant <span class="text-white font-bold">Push The Advantage</span>. 4v3 situation ko 4v2 banao. Team ko call do "EK KNOCK, PUSH PUSH!"</p>
+                            <p class="font-semibold mt-4">Agar aapki HP low hai ya teammate door hai:</p>
+                            <p class="text-gray-300">Turant <span class="text-white font-bold">Create Space & Heal</span>. Gloo wall lagao, peeche hato, heal karo. Knocked enemy ko aapka support finish karega. Aapka zinda rehna zyaada zaroori hai.</p>
+                         </div>
+                          <div class="border-l-4 border-[var(--glow-red)] p-4 rounded">
+                            <h4 class="font-bold text-xl text-red-400">Situation B: Entry Failed (Aapko Heavy Damage Pada)</h4>
+                            <p class="font-semibold mt-4">Agar aapke paas cover & skills hai:</p>
+                            <p class="text-gray-300"><span class="text-white font-bold">Fall Back & Reset</span>. Tatsuya ya Chrono use karke safe position par jao. Apne secondary rusher ko aage aane ka call do: "Main low hoon, tu entry le."</p>
+                             <p class="font-semibold mt-4">Agar aap open mein phas gaye ho:</p>
+                            <p class="text-gray-300"><span class="text-white font-bold">Trade Your Life</span>. Marne se pehle jitna ho sake enemy ko damage do. Call out do: "Yeh banda bohot low hai, one shot!" Taaki aapka teammate trade nikal sake.</p>
+                         </div>
+                     </div>
+                 </div>
+            </section>
+            
+            <!-- Mindset Section -->
+            <section id="mindset" class="mb-20 md:mb-32">
+                <h2 class="font-bebas section-heading text-center reveal">CHAMPION <span class="text-[var(--glow-blue)]">MINDSET</span></h2>
+                <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">"Bhai main thoda sa sochna lag jaata hoon... mujhe rush karna hai ki nahi karna hai?" Agar aapke dimaag mein yeh aata hai, toh aapko mindset pe kaam karna padega.</p>
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <div class="card p-8 reveal stagger-1">
+                        <h3 class="font-bebas text-3xl text-white tracking-wider">Fearless, Not Brainless</h3>
+                        <p class="mt-2 text-gray-300">Aap mein woh fearless mindset hona chahiye ki "haan bhai main charge karunga." Aapko capable hona chahiye ki aap 1v2 le sako. Lekin yeh over-confidence nahi hona chahiye. Aapko mentally strong hona hai ki kahan kaise khelna hai. Jaise Vaky Tikkai fearless hoke jaata hai.</p>
+                    </div>
+                    <div class="card p-8 reveal stagger-2">
+                        <h3 class="font-bebas text-3xl text-white tracking-wider">Lead The Coordination</h3>
+                        <p class="mt-2 text-gray-300">Aapko akela team ko nahi sambhalna hai. Har fight mein <span class="font-bold text-yellow-300">ek solo player ko pakadne ka try karna hai</span>. Yeh decision aapka hoga ki "mereko mere secondary rusher ko yahan leke jaana hai." Yeh lead karne wala cheez aapko seekhna hai, jaise Wasanaa ne Get'hai ke saath milke kiya.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Training Drills Section -->
+            <section id="training" class="mb-20 md:mb-32">
+                <h2 class="font-bebas section-heading text-center reveal">TRAINING <span class="text-[var(--glow-pink)]">DRILLS</span></h2>
+                <p class="text-center max-w-2xl mx-auto mt-4 text-gray-400 reveal stagger-1">Yeh sab cheezein aayengi practice se. Pro players jo custom mein karte hain, woh aapko bhi karna hai. Yeh raha aapka training plan.</p>
+                <div class="card p-8 md:p-12 mt-12 text-left max-w-4xl mx-auto reveal stagger-2">
+                    <h3 class="font-bebas text-4xl text-center tracking-wider">Aapka Daily Practice Routine</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mt-8 list-disc list-inside">
+                        <li><b>1v4 / 1v6 Customs:</b> Isse aapka 1v2, 1v3 ka skill aur confidence, dono build hoga. Fearless mindset yahin se aayega.</li>
+                        <li><b>Combo Practice:</b> Training ground mein Tatsuya + Oskar combo ki muscle memory banao. Ise alag-alag situations mein practice karo.</li>
+                        <li><b>Bait Drills:</b> Apne teammates ke saath custom mein bait rush ki practice karo. Aapka goal sirf zinda rehna aur attention kheench ke rakhna hai.</li>
+                        <li><b>Situational Scrims:</b> Open area fights ki practice karo. Focus is baat par rakho ki knock ke baad over-extend nahi karna hai.</li>
+                        <li><b>Lead The Duo:</b> Apne secondary rusher ke saath 2v4 khelo. Ismein aap usko lead karo, solo targets ko identify karo, aur ek saath push karo.</li>
+                         <li><b>VOD Review:</b> Apne gameplay ko record karo. Har woh fight dekho jahan aap mare ho aur pucho, "Yahan main aur kya behtar kar sakta tha?"</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p class="font-bebas text-xl tracking-widest"><span class="text-[var(--glow-blue)]">RUSHER'S</span><span class="text-gray-200">GUIDE</span></p>
+            <p class="text-sm mt-2">Agar aapko yeh sab kuch achha laga toh bas video ko like kar dena. Channel pe naye ho, subscribe kar lo. Grind karte raho!</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        const header = document.getElementById('header');
+        window.onscroll = () => {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                header.classList.add('py-2'); header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4'); header.classList.remove('py-2');
+            }
+        };
+
+        const tabContainers = document.querySelectorAll('#combo-tabs');
+        tabContainers.forEach(container => {
+            const tabButtons = container.querySelectorAll('.tab-btn');
+            const tabContents = container.querySelectorAll('.tab-content');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
